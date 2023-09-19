@@ -11,5 +11,12 @@ namespace Week1
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
+
+        public Student(int ıd, string name, string surname)
+        {
+            Id = ıd;
+            Name = name;
+            Surname = surname;
+        }
     }
 }
