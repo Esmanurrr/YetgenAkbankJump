@@ -15,5 +15,19 @@ namespace YetgenAkbankJump.OOPConsole.Entities
         public AccessType AccessType { get; set; }
         public DateTime LogTime { get; set; }
 
+        public static AccessType ConvertStringToAccessType(string accessType)
+        {
+            switch (accessType)
+            {
+                case "FP":
+                    return AccessType.FingerPrint;
+                case "FACE":
+                    return AccessType.Face;
+                case "CARD":
+                    return AccessType.Card;
+                default:
+                    throw new Exception("CiYuAyDi");
+            }
+        }
     }
 }

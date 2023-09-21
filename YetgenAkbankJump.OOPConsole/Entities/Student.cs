@@ -8,7 +8,7 @@ using YetgenAkbankJump.OOPConsole.Enums;
 
 namespace YetgenAkbankJump.OOPConsole.Entities
 {
-    public class Student : PersonBase
+    public class Student : EntityBase<Guid>
     {
         public int No { get; set; }
         public DateTimeOffset RegistrationDate { get; set; }
