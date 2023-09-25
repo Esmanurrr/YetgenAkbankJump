@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Week2_2.Entities
+namespace Spotify.Entities
 {
     internal class Playlist
     {
@@ -14,6 +14,7 @@ namespace Week2_2.Entities
 
         public Playlist(Song firstSong)
         {
+            Id = Guid.NewGuid();
             Songs = new List<Song>();
             random = new Random();
             AddSong(firstSong);

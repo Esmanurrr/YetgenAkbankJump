@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Week2_2.Entities
+namespace Spotify.Entities
 {
     internal class Song
     {    

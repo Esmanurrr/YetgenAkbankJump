@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week1", "Practices\Week1\We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week2_1", "Practices\Week2\Week2_1.csproj", "{25FCEF9A-C55A-4875-AF75-93739A8B1BF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week2_2", "Practices\Week2_2\Week2_2.csproj", "{87088507-EA93-4ADD-9093-C03620E5ED44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spotify", "Practices\Week2_2\Spotify.csproj", "{87088507-EA93-4ADD-9093-C03620E5ED44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
