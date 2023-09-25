@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week2_1", "Practices\Week2\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spotify", "Practices\Week2_2\Spotify.csproj", "{87088507-EA93-4ADD-9093-C03620E5ED44}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calender", "Practices\Calender\Calender.csproj", "{C57D57AA-5126-4045-A182-DBC8F5842801}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{87088507-EA93-4ADD-9093-C03620E5ED44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87088507-EA93-4ADD-9093-C03620E5ED44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87088507-EA93-4ADD-9093-C03620E5ED44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C57D57AA-5126-4045-A182-DBC8F5842801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C57D57AA-5126-4045-A182-DBC8F5842801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C57D57AA-5126-4045-A182-DBC8F5842801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C57D57AA-5126-4045-A182-DBC8F5842801}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +49,7 @@ Global
 		{4DA112FC-B3AF-49D0-B2F0-4FE114A89FC1} = {06700681-759D-4322-A18A-2493588E6450}
 		{25FCEF9A-C55A-4875-AF75-93739A8B1BF2} = {06700681-759D-4322-A18A-2493588E6450}
 		{87088507-EA93-4ADD-9093-C03620E5ED44} = {06700681-759D-4322-A18A-2493588E6450}
+		{C57D57AA-5126-4045-A182-DBC8F5842801} = {06700681-759D-4322-A18A-2493588E6450}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0FE9854B-A218-4F16-8444-44EAE33EBE5E}
