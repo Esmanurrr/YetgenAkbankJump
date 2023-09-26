@@ -13,7 +13,7 @@ namespace Freelancer.Services
         public void SaveToNotepad(ICsvConvertible data)
         {
             string path = $"{FileLocations.ProjectFolder}\\Database";
-            string type = data.GetType().ToString().Split(".").LastOrDefault();
+            string type = data.GetType().ToString().Split(".").LastOrDefault(); //{Freelancer.Entities.Customer} - to get type
 
             if(!Directory.Exists(path))
                 Directory.CreateDirectory(path);

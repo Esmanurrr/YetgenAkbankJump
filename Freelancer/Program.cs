@@ -37,7 +37,7 @@ var anotherCustomer = new Customer
 };
 
 NotepadService notepadService = new();
-//notepadService.SaveToNotepad(anotherCustomer);
+notepadService.SaveToNotepad(anotherCustomer);
 string customerData = notepadService.GetOnNotepad("D:\\YetgenAkbank\\YetgenAkbankJump\\Freelancer\\Database\\Customers.txt");
 
 string[] splittedLines = customerData.Split('\n', StringSplitOptions.RemoveEmptyEntries);
