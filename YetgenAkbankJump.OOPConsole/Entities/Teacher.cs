@@ -8,14 +8,21 @@ using YetgenAkbankJump.OOPConsole.Enums;
 
 namespace YetgenAkbankJump.OOPConsole.Entities
 {
-    public class Teacher : PersonBase
+    public class Teacher : EntityBase<long>
     {
         public DateTimeOffset RegistrationDate { get; set; }
 
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
-        public void SayMyName()
+        public static implicit operator Teacher(Student student)
         {
-            Console.WriteLine($"{FirstName} {LastName}");
+            return new Teacher()
+            {
+                FirstName = student.FirstName,
+                LastName = student.LastName,
+                CreatedOn = student.CreatedOn
+            };
         }
     }
 }

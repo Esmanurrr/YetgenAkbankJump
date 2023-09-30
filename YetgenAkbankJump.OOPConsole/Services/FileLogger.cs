@@ -10,6 +10,7 @@ namespace YetgenAkbankJump.OOPConsole.Services
     {
         private readonly string _filePath;
 
+        protected internal override string? Name { get; set; } = "Esmanur Mazlum";
         public FileLogger(string filePath)
         {
             _filePath = filePath;
@@ -18,5 +19,27 @@ namespace YetgenAkbankJump.OOPConsole.Services
         {
             File.AppendAllText(_filePath, message);
         }
+
+        protected internal override void LogError(string message)
+        {
+            Console.WriteLine(_filePath, $"Error => {message}");
+        }
+
+        protected internal override void LogInfo(string message)
+        {
+            Console.WriteLine(_filePath, $"Info => {message}");
+        }
+
+        protected internal override void LogSuccess(string message)
+        {
+            Console.WriteLine(_filePath, $"Success => {message}");
+        }
+
+        protected internal override void LogWarning(string message)
+        {
+            Console.WriteLine(_filePath, $"Warning => {message}");
+        }
+
+        
     }
 }

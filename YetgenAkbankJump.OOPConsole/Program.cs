@@ -1,11 +1,18 @@
-﻿using System.Text.Json;
+﻿using Microsoft.Extensions.Logging;
+using System.Text.Json;
+using YetgenAkbankJump.OOPConsole.Common;
 using YetgenAkbankJump.OOPConsole.Entities;
 using YetgenAkbankJump.OOPConsole.Services;
+
+ILogger logger = new Logger<string>(new LoggerFactory());
 
 const string logFilePath = "C:\\Users\\esman\\Desktop\\logs.txt";
 
 var consoleLogger = new ConsoleLogger();
+
 var fileLogger = new FileLogger(logFilePath);
+
+List<AccessControlLog> logs = new();
 
 try
 {
@@ -14,20 +21,18 @@ try
 
     var textFile = File.ReadAllText(filePath);
 
-    consoleLogger.Log("Text file imported");
-    fileLogger.Log("Text file imported");
+    consoleLogger.LogInfo("Text file imported");
+
+    fileLogger.LogInfo("Text file imported");
     
     //split each line and remove the entries
     var splittedLines = textFile.Split("\r\n", StringSplitOptions.RemoveEmptyEntries);
 
     //33---FRNM3121049B---CARD---2023-08-09T11:10:37+00:00
 
-    consoleLogger.Log("Lines are splitted");
-    fileLogger.Log("Lines are splitted");
+    consoleLogger.LogInfo("Lines are splitted");
+    fileLogger.LogInfo("Lines are splitted");
 
-
-
-    List<AccessControlLog> logs = new();
 
     foreach (var splittedLine in splittedLines)
     {
@@ -45,22 +50,93 @@ try
 
         logs.Add(accessControlLog);
     }
-    consoleLogger.Log("All lines are converted to objects");
-    fileLogger.Log("All lines are converted to objects");
+    consoleLogger.LogInfo("All lines are converted to objects");
+    fileLogger.LogInfo("All lines are converted to objects");
 
     File.WriteAllText("C:\\Users\\esman\\Desktop\\AccessControlLogsJson.txt", JsonSerializer.Serialize(logs));
 
-    consoleLogger.Log("The json file was successfully created"); //logging
-    fileLogger.Log("The json file was successfully created"); //logging
+    consoleLogger.LogSuccess("The json file was successfully created"); //logging
+    fileLogger.LogSuccess("The json file was successfully created"); //logging
 
 
-    consoleLogger.Log("The operation was successfully completed");
-    fileLogger.Log("The operation was successfully completed");
+    consoleLogger.LogSuccess("The operation was successfully completed");
+    fileLogger.LogSuccess("The operation was successfully completed");
+
+    Console.WriteLine(consoleLogger.Name);
+
+    consoleLogger.LogFatal(consoleLogger.Name);
+
+    Console.ReadLine();
+
+
     Console.ReadLine();
 
 }
 catch(Exception ex)
 {
-    consoleLogger.Log(ex.Message);
-    fileLogger.Log(ex.Message);
+    consoleLogger.LogError(ex.Message);
+    fileLogger.LogError(ex.Message);
 }
+
+
+
+List<object> myObjects = new List<object>();
+
+myObjects.Add(consoleLogger);
+
+myObjects.Add(fileLogger);
+
+logs.ForEach(x => myObjects.Add(x));
+
+foreach (var myObject in myObjects)
+{
+    if (myObject is LoggerBase)
+    {
+        var baseLogger = myObject as LoggerBase;
+
+        baseLogger.LogInfo("Ben bir base logger'ım");
+    }
+
+
+    if (myObject is ICreatedByEntity)
+    {
+        var entity = myObject as ICreatedByEntity;
+
+        entity.CreatedOn = DateTimeOffset.Now;
+    }
+
+    if (myObject is IDeletedByEntity)
+    {
+        var entity = myObject as IDeletedByEntity;
+
+        entity.DeletedOn = DateTimeOffset.Now;
+        entity.IsDeleted = true;
+    }
+}
+
+decimal finalAmount = 0;
+
+int amount = 68;
+
+double doubleAmount = 68.5d;
+
+finalAmount = amount;
+
+finalAmount = (decimal)doubleAmount;
+
+Teacher teacher = new Teacher()
+{
+    FirstName = "Alper",
+    LastName = "Tunga",
+    CreatedOn = DateTimeOffset.Now
+};
+
+Student student = new Student()
+{
+    FirstName = "Ahmet",
+    LastName = "Kök",
+    CreatedOn = DateTimeOffset.Now
+};
+
+
+teacher = student;
