@@ -28,6 +28,12 @@ namespace YetgenAkbankJump.OOPConsole.Services
         {
             Console.WriteLine($"Warning => {message} - {DateTime.Now:g}");
         }
+
+        protected internal override void LogFail(string message)
+        {
+            Console.WriteLine($"Fail => {message} - {DateTime.Now:g}");
+        }
+
         public ConsoleLogger(string name) : base(name) // get from LoggerBase
         {
             

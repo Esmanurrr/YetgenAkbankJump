@@ -10,7 +10,7 @@ namespace YetgenAkbankJump.OOPConsole.Services
     {
         private readonly string _filePath;
 
-        protected internal override string? Name { get; set; } = "Esmanur Mazlum";
+        //protected internal override string? Name { get; set; } = "Esmanur Mazlum";
         public FileLogger(string filePath)
         {
             _filePath = filePath;
@@ -40,6 +40,9 @@ namespace YetgenAkbankJump.OOPConsole.Services
             Console.WriteLine(_filePath, $"Warning => {message}");
         }
 
-        
+        protected internal override void LogFail(string message)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
