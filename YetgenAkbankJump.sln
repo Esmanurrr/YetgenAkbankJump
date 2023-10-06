@@ -29,15 +29,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShapeMaster", "ShapeMaster"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{3C075CCC-4DB4-4AAC-8A2F-8E3A70EB504E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeMaster.Domain", "ShapeMaster\Core\ShapeMaster.Domain\ShapeMaster.Domain.csproj", "{7B2D21D7-FC0D-4F02-9AA9-E25F20F942DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShapeMaster.Domain", "ShapeMaster\Core\ShapeMaster.Domain\ShapeMaster.Domain.csproj", "{7B2D21D7-FC0D-4F02-9AA9-E25F20F942DC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{BC450229-37BB-49C9-9B20-0D07B6E8CE98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeMaster.Infrastructure", "Infrastructure\ShapeMaster.Infrastructure\ShapeMaster.Infrastructure.csproj", "{97EBAFD8-86A3-494B-855B-BB5E57D2D071}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShapeMaster.Infrastructure", "Infrastructure\ShapeMaster.Infrastructure\ShapeMaster.Infrastructure.csproj", "{97EBAFD8-86A3-494B-855B-BB5E57D2D071}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{CABACB20-62B4-480F-B41C-D93A82B5FFAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeMaster.Console", "Presentation\ShapeMaster.Console\ShapeMaster.Console.csproj", "{3B708312-8A73-4F6F-A38E-C4AA2035A07F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShapeMaster.Console", "Presentation\ShapeMaster.Console\ShapeMaster.Console.csproj", "{3B708312-8A73-4F6F-A38E-C4AA2035A07F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YetgenAkbankJump.MVCClient", "Lectures\YetgenAkbankJump.MVCClient\YetgenAkbankJump.MVCClient.csproj", "{D76EE3DA-2630-48D2-900B-3ADFA1B7DF54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YetgenAkbankJump.Shared", "Lectures\YetgenAkbankJump.Shared\YetgenAkbankJump.Shared.csproj", "{06DDFAC3-9F95-4FCA-9DA8-6D7272A543C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +97,14 @@ Global
 		{3B708312-8A73-4F6F-A38E-C4AA2035A07F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B708312-8A73-4F6F-A38E-C4AA2035A07F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B708312-8A73-4F6F-A38E-C4AA2035A07F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D76EE3DA-2630-48D2-900B-3ADFA1B7DF54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D76EE3DA-2630-48D2-900B-3ADFA1B7DF54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D76EE3DA-2630-48D2-900B-3ADFA1B7DF54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D76EE3DA-2630-48D2-900B-3ADFA1B7DF54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06DDFAC3-9F95-4FCA-9DA8-6D7272A543C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06DDFAC3-9F95-4FCA-9DA8-6D7272A543C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06DDFAC3-9F95-4FCA-9DA8-6D7272A543C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06DDFAC3-9F95-4FCA-9DA8-6D7272A543C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,6 +126,8 @@ Global
 		{97EBAFD8-86A3-494B-855B-BB5E57D2D071} = {BC450229-37BB-49C9-9B20-0D07B6E8CE98}
 		{CABACB20-62B4-480F-B41C-D93A82B5FFAB} = {A44C397C-1895-465C-B88E-5C374315A0D7}
 		{3B708312-8A73-4F6F-A38E-C4AA2035A07F} = {CABACB20-62B4-480F-B41C-D93A82B5FFAB}
+		{D76EE3DA-2630-48D2-900B-3ADFA1B7DF54} = {DC2040E4-0B51-42B0-A014-B2560A187D64}
+		{06DDFAC3-9F95-4FCA-9DA8-6D7272A543C2} = {DC2040E4-0B51-42B0-A014-B2560A187D64}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0FE9854B-A218-4F16-8444-44EAE33EBE5E}

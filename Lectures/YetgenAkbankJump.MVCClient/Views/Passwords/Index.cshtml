@@ -1,0 +1,12 @@
+﻿@model PasswordsIndexViewModel
+<h1>Şifreniz : @Model.Password</h1>
+
+<form asp-action="Index" asp-route-viewModel="@Model.PasswordLength">
+
+
+    <input asp-for="PasswordLength" />
+
+    <button asp-action="Index"> Kaydet </button>
+
+</form>
+
