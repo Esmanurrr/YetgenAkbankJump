@@ -3,10 +3,10 @@
 
 <form asp-action="Index" asp-route-viewModel="@Model.PasswordLength">
 
+    <label>Şifre uzunluğunu giriniz : </label>
+    <input class="form-control" asp-for="PasswordLength" />
 
-    <input asp-for="PasswordLength" />
-
-    <button asp-action="Index"> Kaydet </button>
+    <button class="btn btn-success mt-3" type="submit"> Kaydet </button>
 
 </form>
 
