@@ -1,7 +1,14 @@
+using Microsoft.Extensions.DependencyInjection;
+using OpenAI.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+
+builder.Services.AddOpenAIService(settings => { settings.ApiKey = "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"; });
+
 
 var app = builder.Build();
 
