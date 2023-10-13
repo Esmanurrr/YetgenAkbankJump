@@ -19,31 +19,49 @@ namespace YetgenAkbankJump.MVCClient.Controllers
             _openAiService = openAiService;
         }
 
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
-
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var imageResult = await _openAiService.Image.CreateImage(new ImageCreateRequest
+            var viewModel = new HomeIndexViewModel();
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Index(HomeIndexViewModel viewModel)
+        {
+            //var imageResult = await _openAiService.Image.CreateImage(new ImageCreateRequest
+            //{
+            //    Prompt = viewModel.Prompt,
+            //    N = viewModel.ImageCount,
+            //    Size = StaticValues.ImageStatics.Size.Size512,
+            //    ResponseFormat = StaticValues.ImageStatics.ResponseFormat.Url,
+            //    User = "KalayMaster"
+            //});
+
+
+            //if (imageResult.Successful)
+            //{
+            //    viewModel.ImageUrls = imageResult.Results.Select(r => r.Url).ToList();
+            //}
+
+            var completionResult = await _openAiService.ChatCompletion.CreateCompletion(new ChatCompletionCreateRequest
             {
-                Prompt = "Laser cat eyes",
-                N = 3,
-                Size = StaticValues.ImageStatics.Size.Size512,
-                ResponseFormat = StaticValues.ImageStatics.ResponseFormat.Url,
-                User = "KalayMaster"
+                Messages = new List<ChatMessage>
+                {
+                    ChatMessage.FromSystem("You are a helpful assistant."),
+                    ChatMessage.FromUser("Who won the world series in 2020?"),
+                    ChatMessage.FromAssistant("The Los Angeles Dodgers won the World Series in 2020."),
+                    ChatMessage.FromUser("Where was it played?")
+                },
+                Model = OpenAI.ObjectModels.Models.Gpt_3_5_Turbo,
+                MaxTokens = 50//optional
             });
-
-            List<string> urls;
-
-            if (imageResult.Successful)
+            if (completionResult.Successful)
             {
-                urls = imageResult.Results.Select(r => r.Url).ToList();
+                viewModel.ChatGPTResponse = completionResult.Choices.First().Message.Content;
             }
 
-            return View();
+            return View(viewModel);
         }
 
 

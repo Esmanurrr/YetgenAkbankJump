@@ -34,4 +34,12 @@
             }
         </div>
     }
+
+    @if (!string.IsNullOrEmpty(Model.ChatGPTResponse))
+    {
+        <div class="row">
+            <textarea class="form-control" rows="3" cols="3" readonly="readonly" asp-for="ChatGPTResponse"></textarea>
+        </div>
+    }
+
 </div>

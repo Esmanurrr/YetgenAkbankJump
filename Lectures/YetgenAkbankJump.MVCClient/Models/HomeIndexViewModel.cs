@@ -6,6 +6,7 @@
         public int ImageCount { get; set; }
 
         public List<string> ImageUrls { get; set; }
+        public string ChatGPTResponse { get; set; }
 
         public HomeIndexViewModel()
         {

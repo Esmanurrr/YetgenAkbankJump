@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 
-builder.Services.AddOpenAIService(settings => { settings.ApiKey = "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"; });
+builder.Services.AddOpenAIService(settings => { settings.ApiKey = ""; });
 
 
 var app = builder.Build();
