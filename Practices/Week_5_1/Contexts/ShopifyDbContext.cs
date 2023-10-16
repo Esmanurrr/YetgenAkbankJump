@@ -14,7 +14,7 @@ namespace Week_5_1.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseNpgsql("Server=91.151.83.102;Port=5432;Database=ShopifyEsmanurMazlum;User Id=ahmetkokteam;Password=obXRMG*U6rJ4R0cbHszpgEuFd;");
+            optionsBuilder.UseNpgsql("");
         }
 
 
