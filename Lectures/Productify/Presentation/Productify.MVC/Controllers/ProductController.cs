@@ -33,9 +33,9 @@ namespace Productify.MVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddProduct(string productName)
+        public IActionResult AddProduct(string productName, string category)
         {
-            _context.Products.Add(new(productName));
+            _context.Products.Add(new(productName, category));
             _context.SaveChanges();
             return View();
         }
