@@ -8,7 +8,6 @@ namespace ShapeMaster.Infrastructure.Services
 {
     public static class DirectoryService
     {
-
         public static string ProjectFile => Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
 
         public static bool IsFileExist(string path)
