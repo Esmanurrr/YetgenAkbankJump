@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ReDoMusic.Domain.Entities
 {
-    internal class Instrument : EntityBase<Guid>
+    public class Instrument : EntityBase<Guid>
     {
         public string Name { get; set; }
         public Brand Brand { get; set; }
