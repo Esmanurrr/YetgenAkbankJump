@@ -79,11 +79,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReDoMusic.Persistence", "Le
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReDoMusic.MVC", "Lectures\ReDoMusic\Presentation\ReDoMusic.MVC\ReDoMusic.MVC.csproj", "{7B01B7CC-1A77-4A36-8609-2C09AE6F240E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YetgenAkbankJump.Domain", "Lectures\YetgenAkbankJump.Domain\YetgenAkbankJump.Domain.csproj", "{1B083776-C9F5-4F14-8936-EBD6AE500C10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YetgenAkbankJump.Domain", "Lectures\YetgenAkbankJump.Domain\YetgenAkbankJump.Domain.csproj", "{1B083776-C9F5-4F14-8936-EBD6AE500C10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YetgenAkbankJump.WebApi", "Lectures\YetgenAkbankJump.WebApi\YetgenAkbankJump.WebApi.csproj", "{CB18C918-0563-4683-8361-F0DF5DC2F80E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YetgenAkbankJump.WebApi", "Lectures\YetgenAkbankJump.WebApi\YetgenAkbankJump.WebApi.csproj", "{CB18C918-0563-4683-8361-F0DF5DC2F80E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YetgenAkbankJump.BlazorClient", "Lectures\YetgenAkbankJump.BlazorClient\YetgenAkbankJump.BlazorClient.csproj", "{928C7483-DFE6-48FF-8123-7F1A62F1E025}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YetgenAkbankJump.BlazorClient", "Lectures\YetgenAkbankJump.BlazorClient\YetgenAkbankJump.BlazorClient.csproj", "{928C7483-DFE6-48FF-8123-7F1A62F1E025}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobHunter", "Practices\JobHunter\JobHunter.csproj", "{8633709D-4481-4851-8005-BE692D84282E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -199,6 +201,10 @@ Global
 		{928C7483-DFE6-48FF-8123-7F1A62F1E025}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{928C7483-DFE6-48FF-8123-7F1A62F1E025}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{928C7483-DFE6-48FF-8123-7F1A62F1E025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8633709D-4481-4851-8005-BE692D84282E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8633709D-4481-4851-8005-BE692D84282E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8633709D-4481-4851-8005-BE692D84282E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8633709D-4481-4851-8005-BE692D84282E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -243,6 +249,7 @@ Global
 		{1B083776-C9F5-4F14-8936-EBD6AE500C10} = {DC2040E4-0B51-42B0-A014-B2560A187D64}
 		{CB18C918-0563-4683-8361-F0DF5DC2F80E} = {DC2040E4-0B51-42B0-A014-B2560A187D64}
 		{928C7483-DFE6-48FF-8123-7F1A62F1E025} = {DC2040E4-0B51-42B0-A014-B2560A187D64}
+		{8633709D-4481-4851-8005-BE692D84282E} = {06700681-759D-4322-A18A-2493588E6450}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0FE9854B-A218-4F16-8444-44EAE33EBE5E}
