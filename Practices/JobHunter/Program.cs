@@ -15,9 +15,33 @@ JobPost jobPost1 = new()
 
     WorkMode = WorkMode.InOffice,
 
-    CreatedOn = DateTime.Now,
+    CreatedOn = DateTime.UtcNow,
 };
 
 JobHunterDbContext _context = new();
+
+var state1 = _context.Entry(jobPost1).State; // Detached
+
 _context.JobPosts.Add(jobPost1);
+
+var state2 = _context.Entry(jobPost1).State; // Added
+
 _context.SaveChanges();
+
+var state3 = _context.Entry(jobPost1).State; // Unchanged
+
+jobPost1.WorkMode = WorkMode.Hybrid;
+
+var state4 = _context.Entry(jobPost1).State; // Modified
+
+_context.SaveChanges();
+
+var state5 = _context.Entry(jobPost1).State; // Unchanged
+
+_context.JobPosts.Remove(jobPost1);
+
+var state6 = _context.Entry(jobPost1).State; // Deleted
+
+_context.SaveChanges();
+
+var state7 = _context.Entry(jobPost1).State; // Detached
