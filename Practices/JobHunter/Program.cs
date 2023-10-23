@@ -3,45 +3,59 @@ using JobHunter.Contexts;
 using JobHunter.Entities;
 using JobHunter.Enums;
 
-Console.WriteLine("Change Tracker");
+Console.WriteLine("Interception");
 
-JobPost jobPost1 = new()
-{
-    Title = "Junior Developer",
+JobHunterDbContext context = new();
 
-    Company = "FoolTech",
+#region Entity States Example
+//JobPost jobPost1 = new()
+//{
+//    Title = "Junior Developer",
 
-    Description = "Bachelor's Degree in Computer Science/Engineering or relevant areas, Minimum 3 years experience in Net Framework & C# programming language (Knowledge and experience in .Net Core is a big plus)",
+//    Company = "FoolTech",
 
-    WorkMode = WorkMode.InOffice,
+//    Description = "Bachelor's Degree in Computer Science/Engineering or relevant areas, Minimum 3 years experience in Net Framework & C# programming language (Knowledge and experience in .Net Core is a big plus)",
 
-    CreatedOn = DateTime.UtcNow,
-};
+//    WorkMode = WorkMode.InOffice,
 
-JobHunterDbContext _context = new();
+//    CreatedOn = DateTime.UtcNow,
+//};
 
-var state1 = _context.Entry(jobPost1).State; // Detached
 
-_context.JobPosts.Add(jobPost1);
+//var state1 = _context.Entry(jobPost1).State; // Detached
 
-var state2 = _context.Entry(jobPost1).State; // Added
+//_context.JobPosts.Add(jobPost1);
 
-_context.SaveChanges();
+//var state2 = _context.Entry(jobPost1).State; // Added
 
-var state3 = _context.Entry(jobPost1).State; // Unchanged
+//_context.SaveChanges();
 
-jobPost1.WorkMode = WorkMode.Hybrid;
+//var state3 = _context.Entry(jobPost1).State; // Unchanged
 
-var state4 = _context.Entry(jobPost1).State; // Modified
+//jobPost1.WorkMode = WorkMode.Hybrid;
 
-_context.SaveChanges();
+//var state4 = _context.Entry(jobPost1).State; // Modified
 
-var state5 = _context.Entry(jobPost1).State; // Unchanged
+//_context.SaveChanges();
 
-_context.JobPosts.Remove(jobPost1);
+//var state5 = _context.Entry(jobPost1).State; // Unchanged
 
-var state6 = _context.Entry(jobPost1).State; // Deleted
+//_context.JobPosts.Remove(jobPost1);
 
-_context.SaveChanges();
+//var state6 = _context.Entry(jobPost1).State; // Deleted
 
-var state7 = _context.Entry(jobPost1).State; // Detached
+//_context.SaveChanges();
+
+//var state7 = _context.Entry(jobPost1).State; // Detached
+
+#endregion
+
+#region Interception
+
+JobPost jobPost1 = context.JobPosts.FirstOrDefault();
+
+jobPost1.Description = "Desc. Changed";
+
+context.SaveChanges();
+
+#endregion
