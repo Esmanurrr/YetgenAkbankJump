@@ -52,10 +52,35 @@ JobHunterDbContext context = new();
 
 #region Interception
 
-JobPost jobPost1 = context.JobPosts.FirstOrDefault();
+//JobPost jobPost1 = context.JobPosts.FirstOrDefault();
 
-jobPost1.Description = "Desc. Changed";
+//jobPost1.Description = "Desc. Changed";
 
-context.SaveChanges();
+//context.SaveChanges();
+
+#endregion
+
+#region IQueryable
+//its ready but its not in db
+var query1 = context.JobPosts
+    .ToList()
+    .Where(x => x.WorkMode == WorkMode.InOffice)
+    .Select(x => new { x.Title, x.CreatedOn })
+    .OrderBy(x => x.CreatedOn);
+
+Console.WriteLine("------------");
+
+var query2 = context.JobPosts
+    .Where(x => x.WorkMode == WorkMode.InOffice)
+    .Select(x => new { x.Title, x.CreatedOn })
+    .OrderBy(x => x.CreatedOn)
+    .ToList();
+
+
+#endregion
+
+#region IEnumerable
+//the result after the query
+//var result = query.ToList();
 
 #endregion
