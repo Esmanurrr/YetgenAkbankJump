@@ -8,6 +8,9 @@ namespace YetgenAkbankJump.OOPConsole.Utility
 {
     public class PasswordGenerator
     {
+        public int GeneratedPasswordsCount { get; set; } = 0;
+
+
         private readonly Random _random;
 
         private const string Numbers = "0123456789";
@@ -49,6 +52,8 @@ namespace YetgenAkbankJump.OOPConsole.Utility
                 passwordBuilder.Append(acceptedChars[randomIndex]);
                 
             }
+
+            GeneratedPasswordsCount++;
 
             return passwordBuilder.ToString();
         }
