@@ -85,7 +85,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YetgenAkbankJump.WebApi", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YetgenAkbankJump.BlazorClient", "Lectures\YetgenAkbankJump.BlazorClient\YetgenAkbankJump.BlazorClient.csproj", "{928C7483-DFE6-48FF-8123-7F1A62F1E025}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobHunter", "Practices\JobHunter\JobHunter.csproj", "{8633709D-4481-4851-8005-BE692D84282E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobHunter", "Practices\JobHunter\JobHunter.csproj", "{8633709D-4481-4851-8005-BE692D84282E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YetgenAkbankJump.BlazorDI", "Lectures\YetgenAkbankJump.BlazorDI\YetgenAkbankJump.BlazorDI.csproj", "{5D8A3868-D32C-4B99-9A72-2C03643B89C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -205,6 +207,10 @@ Global
 		{8633709D-4481-4851-8005-BE692D84282E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8633709D-4481-4851-8005-BE692D84282E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8633709D-4481-4851-8005-BE692D84282E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D8A3868-D32C-4B99-9A72-2C03643B89C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D8A3868-D32C-4B99-9A72-2C03643B89C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D8A3868-D32C-4B99-9A72-2C03643B89C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D8A3868-D32C-4B99-9A72-2C03643B89C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -250,6 +256,7 @@ Global
 		{CB18C918-0563-4683-8361-F0DF5DC2F80E} = {DC2040E4-0B51-42B0-A014-B2560A187D64}
 		{928C7483-DFE6-48FF-8123-7F1A62F1E025} = {DC2040E4-0B51-42B0-A014-B2560A187D64}
 		{8633709D-4481-4851-8005-BE692D84282E} = {06700681-759D-4322-A18A-2493588E6450}
+		{5D8A3868-D32C-4B99-9A72-2C03643B89C6} = {DC2040E4-0B51-42B0-A014-B2560A187D64}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0FE9854B-A218-4F16-8444-44EAE33EBE5E}

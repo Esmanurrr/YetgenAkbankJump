@@ -1,13 +1,18 @@
 ﻿@page "/welcome-page"
+@using Microsoft.Extensions.Localization;
 @using YetgenAkbankJump.BlazorDI.Services;
+@using YetgenAkbankJump.Shared.Helpers;
 @inject IToasterService toastService
+@inject IStringLocalizer<CommonTranslations> Localizer
+
+
 
 <h3>WelcomePage</h3>
 
 @code {
     protected override void OnAfterRender(bool firstRender)
     {
-        toastService.ShowWarning("Welcome!");
+        toastService.ShowWarning(Localizer[CommonTranslationKeys.WelcomeMessage]);
         base.OnAfterRender(firstRender);
 
     }

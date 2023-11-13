@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using YetgenAkbankJump.OOPConsole.Utility;
+using YetgenAkbankJump.Shared.Helpers;
 using YetgenAkbankJump.Shared.Utility;
 
 namespace YetgenAkbankJump.WebApi.Controllers
@@ -11,11 +13,13 @@ namespace YetgenAkbankJump.WebApi.Controllers
     {
         private readonly PasswordGenerator _passwordGenerator;
         private readonly RequestCountService _requestCountService;
+        private readonly IStringLocalizer<CommonTranslations> _localizer;
 
-        public CrazyPasswordsController(PasswordGenerator passwordGenerator, RequestCountService requestCountService)
+        public CrazyPasswordsController(PasswordGenerator passwordGenerator, RequestCountService requestCountService, IStringLocalizer<CommonTranslations> localizer)
         {
             _passwordGenerator = passwordGenerator;
             _requestCountService = requestCountService;
+            _localizer = localizer;
         }
 
         [HttpGet]

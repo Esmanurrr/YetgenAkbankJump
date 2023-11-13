@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Sotsera.Blazor.Toaster.Core.Models;
+using System.Globalization;
 using YetgenAkbankJump.BlazorDI;
 using YetgenAkbankJump.BlazorDI.Services;
 
@@ -12,6 +13,12 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 builder.Services.AddScoped<IToasterService, SotseraToastService>();
 
+builder.Services.AddLocalization(options =>
+{
+    options.ResourcesPath = "Resources";
+});
+
+
 builder.Services.AddToaster(config =>
 {
     //example customizations
@@ -19,5 +26,11 @@ builder.Services.AddToaster(config =>
     config.PreventDuplicates = true;
     config.NewestOnTop = false;
 });
+
+var trCulture = new CultureInfo("tr-TR");
+
+CultureInfo.DefaultThreadCurrentCulture = trCulture;
+CultureInfo.DefaultThreadCurrentUICulture = trCulture;
+
 
 await builder.Build().RunAsync();

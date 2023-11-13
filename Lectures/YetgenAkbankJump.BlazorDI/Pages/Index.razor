@@ -1,6 +1,10 @@
 ﻿@page "/"
+@using Microsoft.Extensions.Localization;
 @using YetgenAkbankJump.BlazorDI.Services;
+@using YetgenAkbankJump.Shared.Helpers;
 @inject IToasterService toastService
+@inject IStringLocalizer<CommonTranslations> Localizer
+
 
 <PageTitle>Index</PageTitle>
 
@@ -14,7 +18,7 @@ Welcome to your new app.
 @code{
     protected override void OnAfterRender(bool firstRender)
     {
-        toastService.ShowSuccess("Welcome!");
+        toastService.ShowSuccess(Localizer[CommonTranslationKeys.WelcomeMessageBlazor]);
         base.OnAfterRender(firstRender);
 
     }

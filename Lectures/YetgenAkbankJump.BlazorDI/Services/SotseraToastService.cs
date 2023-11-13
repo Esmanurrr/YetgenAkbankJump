@@ -5,6 +5,7 @@ namespace YetgenAkbankJump.BlazorDI.Services
     public class SotseraToastService : IToasterService
     {
         private readonly IToaster _toaster;
+        
 
         public SotseraToastService(IToaster toaster)
         {
