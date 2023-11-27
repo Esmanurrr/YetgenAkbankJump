@@ -3,7 +3,10 @@ using Microsoft.Extensions.Options;
 using System.Globalization;
 using YetgenAkbankJump.Domain.Entities;
 using YetgenAkbankJump.OOPConsole.Utility;
+using YetgenAkbankJump.WebApi.Services;
 using YetgenAkbankJump.Shared.Utility;
+using YetgenAkbankJump.Shared.Services;
+using YetgenAkbankJump.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,9 +17,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<PasswordGenerator>(new PasswordGenerator());
+builder.Services.AddSingleton<PasswordGenerator>();
 builder.Services.AddSingleton<RequestCountService>(new RequestCountService());
 
+var textPath = builder.Configuration.GetSection("TextPath").Value;
+
+builder.Services.AddSingleton<IIPService, IPService>();
+
+builder.Services.AddSingleton<ITextService, TextService>();
 
 builder.Services.AddCors(options =>
 {
@@ -27,6 +35,9 @@ builder.Services.AddCors(options =>
             .SetIsOriginAllowed((host) => true)
             .AllowAnyHeader());
 });
+
+builder.Services.AddSharedServices();
+
 
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {

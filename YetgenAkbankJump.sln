@@ -89,7 +89,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobHunter", "Practices\JobH
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YetgenAkbankJump.BlazorDI", "Lectures\YetgenAkbankJump.BlazorDI\YetgenAkbankJump.BlazorDI.csproj", "{5D8A3868-D32C-4B99-9A72-2C03643B89C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonExample", "Practices\SingletonExample\SingletonExample.csproj", "{6399FC31-4067-403B-BAB3-D76AC6AD5DDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingletonExample", "Practices\SingletonExample\SingletonExample.csproj", "{6399FC31-4067-403B-BAB3-D76AC6AD5DDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

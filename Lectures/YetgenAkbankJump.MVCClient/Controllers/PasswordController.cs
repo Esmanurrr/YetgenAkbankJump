@@ -1,17 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using YetgenAkbankJump.MVCClient.Models;
 using YetgenAkbankJump.OOPConsole.Utility;
+using YetgenAkbankJump.Shared.Services;
+using YetgenAkbankJump.Shared.Utility;
 
 namespace YetgenAkbankJump.MVCClient.Controllers
 {
-    public class PasswordsController : Controller
+    public class PasswordController : Controller
     {
         private readonly PasswordGenerator _passwordGenerator;
+        private readonly RequestCountService _requestCountService;
+        private readonly ITextService _textService;
 
-        public PasswordsController()
+        public PasswordController(PasswordGenerator passwordGenerator, RequestCountService requestCountService, ITextService textService)
         {
-            _passwordGenerator = new PasswordGenerator();
+            _passwordGenerator = passwordGenerator;
+            _requestCountService = requestCountService;
+            _textService = textService;
         }
+
 
         [HttpGet]
         public IActionResult Index()
