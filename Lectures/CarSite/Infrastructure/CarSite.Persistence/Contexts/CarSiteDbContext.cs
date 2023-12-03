@@ -19,5 +19,16 @@ namespace CarSite.Persistence.Contexts
             
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().HasKey(c => c.Id);
+
+            modelBuilder.Entity<User>()
+                .Property(c => c.Id)
+                .ValueGeneratedNever();
+
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
