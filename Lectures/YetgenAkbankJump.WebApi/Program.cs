@@ -28,6 +28,8 @@ builder.Services.AddSingleton<IIPService, IPService>();
 
 builder.Services.AddSingleton<ITextService, TextService>();
 
+builder.Services.AddScoped<FakeDataService>();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",

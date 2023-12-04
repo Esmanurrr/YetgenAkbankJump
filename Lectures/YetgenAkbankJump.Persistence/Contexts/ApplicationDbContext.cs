@@ -12,7 +12,7 @@ namespace YetgenAkbankJump.Persistence.Contexts
     public class ApplicationDbContext : DbContext
     {
 
-        DbSet<Student> Students { get; set; }
+        public DbSet<Student> Students { get; set; }
 
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
