@@ -30,6 +30,8 @@ builder.Services.AddSingleton<ITextService, TextService>();
 
 builder.Services.AddScoped<FakeDataService>();
 
+builder.Services.AddMemoryCache();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
