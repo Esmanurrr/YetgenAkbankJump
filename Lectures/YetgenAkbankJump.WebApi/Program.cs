@@ -7,6 +7,8 @@ using YetgenAkbankJump.WebApi.Services;
 using YetgenAkbankJump.Shared.Utility;
 using YetgenAkbankJump.Shared.Services;
 using YetgenAkbankJump.Shared;
+using YetgenAkbankJump.Persistence.Contexts;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,6 +40,9 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddSharedServices();
 
+var connectionString = builder.Configuration.GetConnectionString("PostgreSQL");
+
+builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseNpgsql(connectionString)); //anonym function
 
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
