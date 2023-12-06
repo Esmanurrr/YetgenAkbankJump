@@ -47,7 +47,6 @@ namespace YetgenAkbankJump.WebApi.Controllers
             var category = await _context
                 .Categories
                 .AsNoTracking()
-                .Include(x => x.Products)
                 .FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
 
             return Ok(category);

@@ -9,6 +9,6 @@ namespace YetgenAkbankJump.Domain.Dtos
     public class ProductAddDto
     {
         public string Name { get; set; }
-        public Guid CategoryId { get; set; }
+        public Guid CategoryIds { get; set; }
     }
 }

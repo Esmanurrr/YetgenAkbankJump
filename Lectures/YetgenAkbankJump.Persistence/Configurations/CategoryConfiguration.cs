@@ -47,10 +47,6 @@ namespace YetgenAkbankJump.Persistence.Configurations
             // IsDeleted
             builder.Property(x => x.IsDeleted).IsRequired();
 
-            //Relationships
-            builder.HasMany<Product>(x => x.Products) // category has many product and select this product with x
-                .WithOne(x => x.Category) // each product with one category
-                .HasForeignKey(x => x.CategoryId); //product's foreign key
 
             builder.ToTable("Categories");
         }

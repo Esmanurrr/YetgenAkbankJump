@@ -12,8 +12,8 @@ using YetgenAkbankJump.Persistence.Contexts;
 namespace YetgenAkbankJump.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231206145058_AddedConfigurations")]
-    partial class AddedConfigurations
+    [Migration("20231206170046_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -72,9 +72,6 @@ namespace YetgenAkbankJump.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("CategoryId")
-                        .HasColumnType("uuid");
-
                     b.Property<string>("CreatedByUserId")
                         .IsRequired()
                         .HasMaxLength(75)
@@ -107,9 +104,30 @@ namespace YetgenAkbankJump.Persistence.Migrations
 
                     b.HasKey("Id");
 
+                    b.ToTable("Products", (string)null);
+                });
+
+            modelBuilder.Entity("YetgenAkbankJump.Domain.Entities.ProductCategory", b =>
+                {
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("CreatedByUserId")
+                        .IsRequired()
+                        .HasMaxLength(75)
+                        .HasColumnType("character varying(75)");
+
+                    b.Property<DateTimeOffset>("CreatedOn")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("ProductId", "CategoryId");
+
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("ProductCategories", (string)null);
                 });
 
             modelBuilder.Entity("YetgenAkbankJump.Domain.Entities.Student", b =>
@@ -185,20 +203,33 @@ namespace YetgenAkbankJump.Persistence.Migrations
                     b.ToTable("Student");
                 });
 
-            modelBuilder.Entity("YetgenAkbankJump.Domain.Entities.Product", b =>
+            modelBuilder.Entity("YetgenAkbankJump.Domain.Entities.ProductCategory", b =>
                 {
                     b.HasOne("YetgenAkbankJump.Domain.Entities.Category", "Category")
-                        .WithMany("Products")
+                        .WithMany("ProductCategories")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("YetgenAkbankJump.Domain.Entities.Product", "Product")
+                        .WithMany("ProductCategories")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Category");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("YetgenAkbankJump.Domain.Entities.Category", b =>
                 {
-                    b.Navigation("Products");
+                    b.Navigation("ProductCategories");
+                });
+
+            modelBuilder.Entity("YetgenAkbankJump.Domain.Entities.Product", b =>
+                {
+                    b.Navigation("ProductCategories");
                 });
 #pragma warning restore 612, 618
         }
