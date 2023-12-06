@@ -12,45 +12,45 @@ namespace YetgenAkbankJump.WebApi.Controllers
     [ApiController]
     public class StudentsController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
-        private readonly FakeDataService _fakeDataService;
-        private readonly IMemoryCache _memoryCache;
-        private readonly MemoryCacheEntryOptions _cacheEntryOptions;
-        private const string StudentsCacheKey = "studentsList";
+        //private readonly ApplicationDbContext _context;
+        //private readonly FakeDataService _fakeDataService;
+        //private readonly IMemoryCache _memoryCache;
+        //private readonly MemoryCacheEntryOptions _cacheEntryOptions;
+        //private const string StudentsCacheKey = "studentsList";
 
-        public StudentsController(FakeDataService fakeDataService, ApplicationDbContext context = null, IMemoryCache memoryCache = null, MemoryCacheEntryOptions cacheEntryOptions = null)
-        {
-            _fakeDataService = fakeDataService;
-            _context = context;
-            _memoryCache = memoryCache;
-            _cacheEntryOptions = new MemoryCacheEntryOptions()
-            {
-                Priority = CacheItemPriority.High,
-                AbsoluteExpiration = DateTimeOffset.UtcNow.AddMinutes(30),
-            };
-        }
+        //public StudentsController(FakeDataService fakeDataService, ApplicationDbContext context = null, IMemoryCache memoryCache = null, MemoryCacheEntryOptions cacheEntryOptions = null)
+        //{
+        //    _fakeDataService = fakeDataService;
+        //    _context = context;
+        //    _memoryCache = memoryCache;
+        //    _cacheEntryOptions = new MemoryCacheEntryOptions()
+        //    {
+        //        Priority = CacheItemPriority.High,
+        //        AbsoluteExpiration = DateTimeOffset.UtcNow.AddMinutes(30),
+        //    };
+        //}
 
-        [HttpPost("action")]
-        public async Task<IActionResult> GenerateFakeDataAsync(CancellationToken cancellationToken)
-        {
-            return Ok(await  _fakeDataService.GenerateStudentDataAsync(cancellationToken));
-        }
+        //[HttpPost("action")]
+        //public async Task<IActionResult> GenerateFakeDataAsync(CancellationToken cancellationToken)
+        //{
+        //    return Ok(await  _fakeDataService.GenerateStudentDataAsync(cancellationToken));
+        //}
 
-        [HttpGet]
-        public async Task<IActionResult> GetAll(CancellationToken cancellationToken)
-        {
-            List<Student> students = new List<Student>();
+        //[HttpGet]
+        //public async Task<IActionResult> GetAll(CancellationToken cancellationToken)
+        //{
+        //    List<Student> students = new List<Student>();
 
-            if(_memoryCache.TryGetValue(StudentsCacheKey, out students))
-            {
-                return Ok(students);
-            }
+        //    if(_memoryCache.TryGetValue(StudentsCacheKey, out students))
+        //    {
+        //        return Ok(students);
+        //    }
 
-            students = await _context.Students.AsNoTracking().ToListAsync(cancellationToken);
+        //    students = await _context.Students.AsNoTracking().ToListAsync(cancellationToken);
 
-            _memoryCache.Set(StudentsCacheKey, students, _cacheEntryOptions); //where did u save
+        //    _memoryCache.Set(StudentsCacheKey, students, _cacheEntryOptions); //where did u save
 
-            return Ok(students);
-        }
+        //    return Ok(students);
+        //}
     }
 }
