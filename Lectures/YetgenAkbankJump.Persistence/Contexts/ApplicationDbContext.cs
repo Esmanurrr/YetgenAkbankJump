@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using YetgenAkbankJump.Domain.Entities;
+using YetgenAkbankJump.Domain.Identity;
 
 namespace YetgenAkbankJump.Persistence.Contexts
 {
@@ -24,6 +25,9 @@ namespace YetgenAkbankJump.Persistence.Contexts
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
+            modelBuilder.Ignore<User>();
+            modelBuilder.Ignore<Role>();
+            modelBuilder.Ignore<UserSetting>();
 
             base.OnModelCreating(modelBuilder);
         }
