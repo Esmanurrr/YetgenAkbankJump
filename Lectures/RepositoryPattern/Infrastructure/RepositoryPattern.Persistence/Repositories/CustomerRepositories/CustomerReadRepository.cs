@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RepositoryPattern.Persistence.Repositories.CustomerRepositories
 {
-    public class CustomerReadRepository : ReadRepository<Customer>, ICustomerReadRepository<Customer>
+    public class CustomerReadRepository : ReadRepository<Customer>, ICustomerReadRepository
     {
         public CustomerReadRepository(RepositoryDbContext context) : base(context)
         {

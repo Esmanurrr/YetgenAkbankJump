@@ -9,9 +9,9 @@ using RepositoryPattern.Persistence.Contexts;
 
 namespace RepositoryPattern.Persistence.Repositories.ProductRepositories
 {
-    public class ProductReadRepository : ReadRepository<Product>, IProductReadRepository
+    public class ProductWriteRepository : WriteRepository<Product>, IProductWriteRepository
     {
-        public ProductReadRepository(RepositoryDbContext context) : base(context)
+        public ProductWriteRepository(RepositoryDbContext context) : base(context)
         {
         }
     }

@@ -1,6 +1,9 @@
+using RepositoryPattern.Application.Repositories.CustomerRepositories;
 using RepositoryPattern.Application.Repositories.ProductRepositories;
 using RepositoryPattern.Persistence.Contexts;
+using RepositoryPattern.Persistence.Repositories.CustomerRepositories;
 using RepositoryPattern.Persistence.Repositories.ProductRepositories;
+using RepositoryPattern.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,9 +14,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IProductReadRepository, ProductReadRepository>();
-
-builder.Services.AddDbContext<RepositoryDbContext>();
+builder.Services.AddPersistenceServices();
 
 var app = builder.Build();
 
