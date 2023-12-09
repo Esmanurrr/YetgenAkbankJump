@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using RepositoryPattern.Persistence.Repositories.ProductRepositories;
 using RepositoryPattern.Domain.Entities;
 using RepositoryPattern.Application.Repositories.ProductRepositories;
+using RepositoryPattern.Application.Features.Queries.ProductQueries.Add;
+using MediatR;
 
 namespace RepositoryPattern.API.Controllers
 {
@@ -11,12 +13,12 @@ namespace RepositoryPattern.API.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly IProductReadRepository _productReadRepository;
-        private readonly IProductWriteRepository _productWriteRepository;
+        private readonly IMediator _mediator;
 
-        public ProductsController(IProductReadRepository productReadRepository, IProductWriteRepository productWriteRepository = null)
+        public ProductsController(IProductReadRepository productReadRepository, IProductWriteRepository productWriteRepository = null, IMediator mediator = null)
         {
             _productReadRepository = productReadRepository;
-            _productWriteRepository = productWriteRepository;
+            _mediator = mediator;
         }
 
         [HttpGet]
@@ -26,17 +28,10 @@ namespace RepositoryPattern.API.Controllers
         }
 
         [HttpPost("[action]")]
-        public void Add(string name, decimal price)
+        public async Task<IActionResult> Add(AddProductRequest request)
         {
-            var product = new Product()
-            {
-                Id = Guid.NewGuid(),
-                Name = name,
-                Price = price
-            };
-
-            _productWriteRepository.Add(product);
-            _productWriteRepository.SaveChanges();
+           var response = await _mediator.Send(request);
+            return Ok(response);
         }
 
     }

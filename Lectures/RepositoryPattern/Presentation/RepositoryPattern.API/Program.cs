@@ -4,6 +4,7 @@ using RepositoryPattern.Persistence.Contexts;
 using RepositoryPattern.Persistence.Repositories.CustomerRepositories;
 using RepositoryPattern.Persistence.Repositories.ProductRepositories;
 using RepositoryPattern.Persistence;
+using RepositoryPattern.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddPersistenceServices();
+builder.Services.AddApplicationServices();
 
 var app = builder.Build();
 
